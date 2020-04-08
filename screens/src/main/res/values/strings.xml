@@ -1,0 +1,9 @@
+<resources>
+    <string name="fragment_search_title">Search</string>
+    <string name="fragment_search_edittext_hint">Search</string>
+
+    <string name="fragment_trending_title">Giphy</string>
+
+    <string name="empty_list_message">Empty list</string>
+    <string name="card_created_at">Created at %s</string>
+</resources>

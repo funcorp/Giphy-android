@@ -1,0 +1,224 @@
+ext {
+
+    config = [
+            'compileSdkVersion'        : 28,
+            'applicationId'            : "co.fun.testgiphy",
+            'minSdkVersion'            : 21,
+            'targetSdkVersion'         : 28,
+            'versionCode'              : 1,
+            'versionName'              : "1.0",
+    ]
+
+    versions = [
+            'androidx'             : '1.0.2',
+            'navigation'           : '2.0.0',
+            'lifecycle'            : '2.0.0',
+            'constraintLayoutx'    : '1.1.3',
+            'androidxCardView'     : '1.0.0-alpha1',
+            'constraintLayout'     : '1.1.3',
+            'dataBinding'          : '3.1.4',
+            'supportLibrary'       : '28.0.0',
+            'atsl'                 : '1.0.2',
+            'kotlin'               : '1.3.31',
+            'kotlinCoroutines'     : '1.2.1',
+            'kotlinSerialization'  : '0.11.0',
+            'junitrunner'          : '3.3.2',
+            'arrow'                : '0.8.2',
+            'okhttp'               : '3.14.1',
+            'retrofit'             : '2.5.0',
+            'dagger'               : '2.16',
+            'moxy'                 : '1.5.3',
+            'moxyx'                : '1.7.0',
+            'arch'                 : '1.1.1',
+            'fabric'               : '1.25.3',
+            'leakcanary'           : '1.5.4',
+            'googleServices'       : '16.0.0',
+            'glide'                : '4.8.0',
+            'toothpick'            : '3.0.2',
+            'stetho'               : '1.5.0',
+            'crashlytics'          : '2.9.8@aar',
+            'timber'               : '4.7.1',
+            'cicerone'             : '3.0.0',
+            'gson'                 : '2.8.2',
+            'truth'                : '0.39',
+            'inject'               : '1@jar',
+            'apacheCommons'        : '3.7',
+            'picasso'              : '2.71828',
+            'spinKit'              : '1.1.0',
+            'customActivityOnCrash': '2.1.0',
+    ]
+    deps = [
+            'kotlin'               : [
+                    'stdlib'    : [
+                            'common': "org.jetbrains.kotlin:kotlin-stdlib-common:${versions.kotlin}",
+                            'jdk7'  : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}",
+                            'jdk'   : "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}",
+                    ],
+                    'coroutines': [
+                            'common' : "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:${versions.kotlinCoroutines}",
+                            'jdk'    : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.kotlinCoroutines}",
+                            'android': "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.kotlinCoroutines}",
+                            'rx2'    : "org.jetbrains.kotlinx:kotlinx-coroutines-rx2:${versions.kotlinCoroutines}",
+                    ],
+            ],
+            'android'              : [
+                    'arch'       : [
+                            'core'       : [
+                                    'testing': "android.arch.core:core-testing:${versions.arch}"
+                            ],
+                            'dbFramework': "android.arch.persistence:db-framework:${versions.arch}",
+                            'room'       : [
+                                    'runtime' : "android.arch.persistence.room:runtime:${versions.arch}",
+                                    'rxjava'  : "android.arch.persistence.room:rxjava2:${versions.arch}",
+                                    'compiler': "android.arch.persistence.room:compiler:${versions.arch}",
+                                    'testing' : "android.arch.persistence.room:testing:${versions.arch}",
+                            ],
+                            'navigation' : [
+                                    'ui'      : "android.arch.navigation:navigation-ui:${versions.navigation}",
+                                    'fragment': "android.arch.navigation:navigation-fragment:${versions.navigation}",
+                            ],
+                    ],
+                    'support'    : [
+                            'annotations'     : "com.android.support:support-annotations:${versions.supportLibrary}",
+                            'coreUtils'       : "com.android.support:support-core-utils:${versions.supportLibrary}",
+                            'appCompat'       : "com.android.support:appcompat-v7:${versions.supportLibrary}",
+                            'recyclerView'    : "com.android.support:recyclerview-v7:${versions.supportLibrary}",
+                            'customTabs'      : "com.android.support:customtabs:${versions.supportLibrary}",
+                            'design'          : "com.android.support:design:${versions.supportLibrary}",
+                            'constraintLayout': "com.android.support.constraint:constraint-layout:${versions.constraintLayout}",
+                            'leanback'        : "com.android.support:leanback-v17:${versions.supportLibrary}",
+                            'compat'          : "com.android.support:support-compat:${versions.supportLibrary}",
+                    ],
+                    'x'          : [
+                            'coreKtx'              : "androidx.core:core-ktx:${versions.androidx}",
+                            'appcompat'            : "androidx.appcompat:appcompat:${versions.androidx}",
+                            'constraintLayout'     : "androidx.constraintlayout:constraintlayout:${versions.constraintLayoutx}",
+                            'navigation'           : [
+                                    'ui'      : "androidx.navigation:navigation-ui-ktx:${versions.navigation}",
+                                    'fragment': "androidx.navigation:navigation-fragment-ktx:${versions.navigation}",
+                            ],
+                            'cardView'             : "androidx.cardview:cardview:${versions.androidxCardView}",
+                            'lifecycle'            : "androidx.lifecycle:lifecycle-extensions:${versions.lifecycle}",
+                            'lifecycleCompiler'    : "androidx.lifecycle:lifecycle-compiler:${versions.lifecycle}",
+                            'lifecycleCompilerJdk8': "androidx.lifecycle:lifecycle-common-java8:${versions.lifecycle}",
+                            'viewModelScope'       : "androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0-beta01",
+                            'lifecycleScope'       : "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0-alpha01",
+                            'liveDataScope'        : "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0-alpha01",
+                    ],
+                    'dataBinding': "com.android.databinding:compiler:${versions.dataBinding}",
+            ],
+            'arrow'                : [
+                    'core'                      : "io.arrow-kt:arrow-core:${versions.arrow}",
+                    'syntax'                    : "io.arrow-kt:arrow-syntax:${versions.arrow}",
+                    'typeclasses'               : "io.arrow-kt:arrow-typeclasses:${versions.arrow}",
+                    'data'                      : "io.arrow-kt:arrow-data:${versions.arrow}",
+                    'instances'                 : "io.arrow-kt:arrow-instances-core:${versions.arrow}",
+                    'instances_data'            : "io.arrow-kt:arrow-instances-data:${versions.arrow}",
+                    'annotations'               : "io.arrow-kt:arrow-annotations-processor:${versions.arrow}", // kapt
+                    'free'                      : "io.arrow-kt:arrow-free:${versions.arrow}", //optional
+                    'mtl'                       : "io.arrow-kt:arrow-mtl:${versions.arrow}", //optional
+                    'effects'                   : "io.arrow-kt:arrow-effects:${versions.arrow}", //optional
+                    'effects_rx2'               : "io.arrow-kt:arrow-effects-rx2:${versions.arrow}", //optional
+                    'effects_reactor'           : "io.arrow-kt:arrow-effects-reactor:${versions.arrow}", //optional
+                    'effects_kotlinx_coroutines': "io.arrow-kt:arrow-effects-kotlinx-coroutines:${versions.arrow}", //optional
+                    'optics'                    : "io.arrow-kt:arrow-optics:${versions.arrow}", //optional
+                    'generic'                   : "io.arrow-kt:arrow-generic:${versions.arrow}", //optional
+                    'recursion'                 : "io.arrow-kt:arrow-recursion:${versions.arrow}", //optional
+            ],
+            'mlKit'                : [
+                    'core'                 : 'com.google.firebase:firebase-core:16.0.3',
+                    'common'               : 'com.google.firebase:firebase-ml-common:16.1.2',
+                    'vision'               : 'com.google.firebase:firebase-ml-vision:17.0.0',
+                    'visionImageLabelModel': 'com.google.firebase:firebase-ml-vision-image-label-model:15.0.0',
+                    'modelInterpreter'     : 'com.google.firebase:firebase-ml-model-interpreter:16.2.0',
+            ],
+            'googleServices'       : [
+                    'basement': "com.google.android.gms:play-services-basement:${versions.googleServices}",
+                    'location': "com.google.android.gms:play-services-location:${versions.googleServices}",
+            ],
+            'moxy'                 : [
+                    'appcompat'  : "com.arello-mobile:moxy-app-compat:${versions.moxy}",
+                    'moxy'       : "com.arello-mobile:moxy:${versions.moxy}",
+                    'moxyAndroid': "com.arello-mobile:moxy-android:${versions.moxy}",
+                    'compiler'   : "com.arello-mobile:moxy-compiler:${versions.moxy}"
+            ],
+            'moxyx'                : [
+                    'moxyx'    : "tech.schoolhelper:moxy-x:${versions.moxyx}",
+                    'compiler' : "tech.schoolhelper:moxy-x-compiler:${versions.moxyx}",
+                    'android'  : "tech.schoolhelper:moxy-x-android:${versions.moxyx}",
+                    'appCompat': "tech.schoolhelper:moxy-x-app-compat:${versions.moxyx}",
+            ],
+            'okhttp'               : [
+                    'client'       : "com.squareup.okhttp3:okhttp:${versions.okhttp}",
+                    'logging'      : "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}",
+                    'mockWebServer': "com.squareup.okhttp3:mockwebserver:${versions.okhttp}",
+            ],
+            'retrofit'             : [
+                    'client'                 : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
+                    'adapterKotlinCoroutines': 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-experimental-adapter:1.0.0',
+                    'adapterRxJava'          : "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofit}",
+                    'gsonConverter'          : "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
+            ],
+            'rx'                   : [
+                    'java'       : 'io.reactivex.rxjava2:rxjava:2.1.13',
+                    'android'    : 'io.reactivex.rxjava2:rxandroid:2.0.1',
+                    'kotlin'     : 'io.reactivex.rxjava2:rxkotlin:2.2.0',
+                    'permissions': 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
+            ],
+            'dagger'               : [
+                    'runtime'        : "com.google.dagger:dagger:${versions.dagger}",
+                    'compiler'       : "com.google.dagger:dagger-compiler:${versions.dagger}",
+                    'androidRuntime' : "com.google.dagger:dagger-android:${versions.dagger}",
+                    'androidCompiler': "com.google.dagger:dagger-android-processor:${versions.dagger}",
+            ],
+            'toothpick'            : [
+                    'runtimeKotlin': "com.github.stephanenicolas.toothpick:ktp:${versions.toothpick}",
+                    'testingJunit' : "com.github.stephanenicolas.toothpick:toothpick-testing-junit5:${versions.toothpick}",
+                    'runtime'      : "com.github.stephanenicolas.toothpick:toothpick-runtime:${versions.toothpick}",
+                    'smoothie'     : "com.github.stephanenicolas.toothpick:smoothie:${versions.toothpick}",
+                    'compiler'     : "com.github.stephanenicolas.toothpick:toothpick-compiler:${versions.toothpick}",
+                    'testing'      : "com.github.stephanenicolas.toothpick:toothpick-testing:${versions.toothpick}",
+            ],
+            'leakcanary'           : [
+                    'debug'  : "com.squareup.leakcanary:leakcanary-android:${versions.leakcanary}",
+                    'release': "com.squareup.leakcanary:leakcanary-android-no-op:${versions.leakcanary}"
+            ],
+            'fabric'               : [
+                    'androidSdk': 'io.fabric.sdk.android:fabric:1.4.3'
+            ],
+            'firebase'             : [
+                    'jobDispatcher': "com.firebase:firebase-jobdispatcher:0.8.5",
+                    'core'         : 'com.google.firebase:firebase-core:16.0.1',
+            ],
+            'glide'                : [
+                    'glide'                  : "com.github.bumptech.glide:glide:${versions.glide}",
+                    'recyclerViewIntegration': "com.github.bumptech.glide:recyclerview-integration:${versions.glide}",
+                    'compiler'               : "com.github.bumptech.glide:compiler:${versions.glide}",
+            ],
+            'stetho'               : [
+                    'main'         : "com.facebook.stetho:stetho:${versions.stetho}",
+                    'okhttp3'      : "com.facebook.stetho:stetho-okhttp3:${versions.stetho}",
+                    'okhttp'       : "com.facebook.stetho:stetho-okhttp:${versions.stetho}",
+                    'urlConnection': "com.facebook.stetho:stetho-urlconnection:${versions.stetho}",
+            ],
+            'db'                   : [
+                    'paper': 'io.paperdb:paperdb:2.6',
+            ],
+            'yandex'               : [
+                    'mapkit': 'com.yandex.android:mapkit:3.3.1',
+            ],
+            'cicerone'             : 'ru.terrakok.cicerone:cicerone:3.0.0',
+            'crashlytics'          : "com.crashlytics.sdk.android:crashlytics:${versions.crashlytics}",
+            'timber'               : "com.jakewharton.timber:timber:${versions.timber}",
+            'gson'                 : "com.google.code.gson:gson:${versions.gson}",
+            'junit'                : "junit:junit:${versions.junit}",
+            'truth'                : "com.google.truth:truth:${versions.truth}",
+            'inject'               : "javax.inject:javax.inject:${versions.inject}",
+            'robolectric'          : "org.robolectric:robolectric:${versions.robolectric}",
+            'apacheCommons'        : "org.apache.commons:commons-lang3:${versions.apacheCommons}",
+            'picasso'              : "com.squareup.picasso:picasso:${versions.picasso}",
+            'spinKit'              : "com.github.ybq:Android-SpinKit:${versions.spinKit}",
+            'customActivityOnCrash': "cat.ereza:customactivityoncrash:${versions.customActivityOnCrash}",
+            'rvanimators'          : 'jp.wasabeef:recyclerview-animators:2.0.0',
+    ]
+}

@@ -1,0 +1,27 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-kapt'
+
+apply from: "../conf.gradle"
+
+def implementationDependencies = [
+        deps.kotlin.stdlib.jdk7,
+        deps.kotlin.coroutines.jdk,
+        deps.toothpick.runtimeKotlin,
+        deps.arrow.core,
+        deps.arrow.syntax,
+        deps.okhttp.logging,
+        deps.timber,
+]
+
+def kaptDependencies = [
+        deps.toothpick.compiler,
+]
+
+dependencies {
+    implementationDependencies.forEach { dep -> implementation(dep) }
+    kaptDependencies.forEach { dep -> kapt(dep) }
+}
+
+sourceCompatibility = "8"
+targetCompatibility = "8"

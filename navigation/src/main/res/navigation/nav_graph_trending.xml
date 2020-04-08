@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_trending"
+    app:startDestination="@id/fragmentTrending">
+
+    <fragment
+        android:id="@+id/fragmentTrending"
+        android:name="co.fun.testgiphy.trending.FragmentTrending">
+        <action
+            android:id="@+id/action_fragmentTrending_to_fragmentSearch"
+            app:destination="@id/fragmentSearch" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSearch"
+        android:name="co.fun.testgiphy.search.FragmentSearch">
+        <action
+            android:id="@+id/action_fragmentSearch_pop"
+            app:destination="@id/fragmentTrending"
+            app:popUpTo="@layout/fragment_trending"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+</navigation>

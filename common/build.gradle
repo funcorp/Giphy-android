@@ -1,0 +1,55 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+apply from: "../conf.gradle"
+
+android {
+    compileSdkVersion config.compileSdkVersion
+    defaultConfig {
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.versionCode
+        versionName config.versionName
+    }
+}
+
+def apiDependencies = [
+        deps.kotlin.stdlib.jdk7,
+        deps.android.x.coreKtx,
+        deps.android.x.appcompat,
+        deps.android.x.constraintLayout,
+        deps.android.x.lifecycle,
+        deps.android.x.lifecycleScope,
+        deps.android.x.viewModelScope,
+        deps.android.x.liveDataScope,
+        deps.android.x.navigation.ui,
+        deps.android.x.navigation.fragment,
+        deps.android.x.cardView,
+        deps.kotlin.coroutines.jdk,
+        deps.kotlin.coroutines.android,
+        deps.toothpick.runtimeKotlin,
+        deps.retrofit.client,
+        deps.retrofit.gsonConverter,
+        deps.okhttp.logging,
+        deps.arrow.core,
+        deps.arrow.syntax,
+        deps.glide.glide,
+        deps.db.paper,
+        deps.timber,
+        deps.rvanimators,
+]
+
+def kaptDependencies = [
+        deps.toothpick.compiler,
+        deps.android.x.lifecycleCompiler,
+]
+
+dependencies {
+    api(deps.glide.recyclerViewIntegration) {
+        transitive = false
+    }
+    apiDependencies.forEach { dep -> api(dep) }
+    kaptDependencies.forEach { dep -> kapt(dep) }
+}

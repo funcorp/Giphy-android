@@ -1,0 +1,30 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+apply from: "../conf.gradle"
+
+android {
+    compileSdkVersion config.compileSdkVersion
+    defaultConfig {
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.versionCode
+        versionName config.versionName
+    }
+}
+
+def implementationDependencies = [
+        project(':common'),
+        project(':screens'),
+]
+
+def kaptDependencies = [
+        deps.toothpick.compiler,
+]
+
+dependencies {
+    implementationDependencies.forEach { dep -> implementation(dep) }
+    kaptDependencies.forEach { dep -> kapt(dep) }
+}
